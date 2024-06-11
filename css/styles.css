@@ -257,6 +257,8 @@ span{
     flex-direction: column;
     align-items: center;
     width: 125px;
+
+   
     margin-bottom: 20px;
     margin-top: 20px;
     margin-right: 80px;
@@ -315,9 +317,10 @@ span{
 }
 .img-service { 
     
-    margin-left:40px;
+    margin-left:10px;
     margin-bottom:90px ;
-    width: 600px; 
+    width: 500px; 
+    padding: 20px 30px 0 30px;
  } 
  
 
@@ -558,6 +561,8 @@ span{
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     padding-bottom: 40px;
+    border: 1px solid var(--mutted);
+   
 
 }
 
@@ -691,11 +696,10 @@ span{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 20px);
+    /* height: calc(100vh - 20px); */
     background-color: var(--white);
+    width: 100%;
    
-   
-    
 }
 
 
@@ -703,8 +707,9 @@ span{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 80%;
-    margin-top: 180px;
+    
+    margin-top: 130px;
+    gap: 130px;
    
 }
 
@@ -713,15 +718,14 @@ span{
     font-weight: 700;
     position: relative;
     bottom: 90px;
-    right: 35px;
+    right: 60px;
 }
 
 .signin-title h1{
 
-    font-size: 3rem;
-    font-weight: 700;
-    position: relative;
-    bottom: 80px;
+    align-items: center;
+    font-size: 48px;
+    margin-bottom: 100px;
 
 }
 
@@ -740,13 +744,27 @@ span{
 }
 
 
+.signin-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 110px;
+}
+
 .signup-form label {
     margin-top: 4px;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
      font-weight: 500;
 }
 
-.signup-form input {
+.signin-form label{
+    
+    margin-top: 4px;
+    margin-bottom: 8px;
+     font-weight: 500;
+}
+
+.signup-form input{
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -754,18 +772,17 @@ span{
     width: 350px;
 }
 
-/* 
-.signup-form select{
-    padding: 4px;
+.signin-form input{
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    margin-bottom: 10px;
-    
-} */
+    margin-bottom: 14px;
+    width: 350px;
+}
 
 .phone-input {
     display: flex;
-    gap: 1px;
+    gap: 2px;
    
 }
 
@@ -774,16 +791,28 @@ span{
     border: 1px solid #ccc;
     border-radius: 10px;
     margin-bottom: 10px;
-    width: 400px;
-    width: 12%;
+   
+    width: 15%;
 }
 
 .phone-input input {
-    width: 280px;
+    width: 270px;
 }
 
 
-.signup-form button {
+.signup-form button{
+    margin-top: 20px;
+    padding: 15px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 350px;
+    margin-bottom: 0px;
+}
+
+.signin-form button{
     margin-top: 20px;
     padding: 15px;
     background-color: var(--primary);
@@ -799,7 +828,9 @@ span{
     background-color: var(--primary);
 }
 
-
+.signin-form button:hover{
+    background-color: var(--primary);
+}
 
 .create-account {
     display: flex;
@@ -811,6 +842,9 @@ span{
 .create-account p {
     margin-right: 5px;
     margin-top: 35px;
+    font-size: 16px;
+    
+    width: 100%;
 }
 
 .create-account .sign-btn {
@@ -820,19 +854,15 @@ span{
     border-radius: 5px;
     border: none;
     cursor: pointer;
-    width: 125px;
-    margin-left: 30px;
+    
+    margin-right: 140px;
+    /* width: 100%; */
     
 }
 
 .create-account a{
     color: var(--white);
 }
-
-
-
-
-
 
 
 
@@ -897,7 +927,7 @@ span{
 
 
 
-/* Footer */  
+/****************** Footer **********************/  
 
 #footer {
    
@@ -1051,28 +1081,24 @@ span{
     color: var(--white);
   }
   
-  .foot {
-    background-color: rgb(14, 68, 99);
 
-    /* width: 100%; */
-    text-align: center;
-    padding: 10px 0px 10px 0px;
-    height: 40px;
-    color: white;
-    font-size: 12px;
-    margin-bottom: 0;
-    margin-top: 20px;
-    
-  }
-  
-  .foot p{
-    margin-top: 1px;
-  }
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:  #216583;
+    color: var(--white);
+    padding: 1px;
+    width: 100%;
+}
 
-
+.error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
 
 /*********************Responsivité***********************/
-
 
 
 /*********** Menu de navbar des elements ***********/
@@ -1088,16 +1114,16 @@ span{
         }
 
         /* Responsive styles */
-        @media (max-width: 1200px),(max-width: 1000px), (max-width: 600px), (max-width: 500px) {
+        @media (max-width: 1200px),(max-width: 768px), (max-width: 600px), (max-width: 500px) {
             .menu-toggle {
                 display: block;
             }
         }
 
-        @media (max-width: 1000px),(max-width: 1200px) {
+        @media (max-width: 400px),(max-width: 768px),(max-width: 1200px) {
             .navigation .menu {
                 display: none;
-                flex-direction: column;
+                justify-content: center;
                 position: absolute;
                 top: 60px;
                 right: 10px;
@@ -1114,6 +1140,7 @@ span{
 
             .navigation .menu.show {
                 display: flex;
+                flex-direction: columnW;
             }
 
             .navigation .menu a {
@@ -1128,9 +1155,20 @@ span{
             }
         }
 
+        /* @media (max-width: 768px) {
+            .navigation  {
+                display: flex;
+                justify-content: center;
+            
+            
+            }
+        } */
+
         @media (max-width: 600px) {
             .navigation .menu {
                 top: 50px;
+            
+            
             }
         }
 
@@ -1189,7 +1227,7 @@ span{
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     #home .left-content h1 {
         font-size: 20px;
     }
@@ -1259,10 +1297,10 @@ span{
 
 @media (max-width: 768px) {
     .navigation {
-        flex-direction: column;
+        flex-direction: row;
     }
     .menu {
-        flex-direction: column;
+        flex-direction: row;
         display: none;
     }
     .menu.show {
@@ -1294,22 +1332,50 @@ span{
         margin: 20px 10px;
         padding: 10px;
     }
-    .right-service .serv {
-        width: 100px;
-        margin-right: 20px;
-        padding: 5px;
+
+    .right-service {
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        margin-top: 30px;
+        
     }
+
+    .right-service .serv {
+        width: 125px;
+        height: 125px;
+        margin-right: 20px;
+        padding: 10px 70px;
+        
+    }
+
+    .right-service .serv p {
+
+       font-size: 12px;
+       line-height: 0.9;       
+    }
+
     .more-services h1 {
         font-size: 24px;
-        margin-top: 20px;
+        margin-top: 40px;
+
     }
+
     .service-item img {
         width: 8%;
         height: 6%;
+        margin-top: 5px;
     }
     .main-service {
         width: 90%;
     }
+/* 
+   #services .more-services .our-services{
+       
+    }  */
+
 }
 
 
@@ -1330,7 +1396,7 @@ span{
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 968px) {
     .navigation {
         padding: 5px 0;
     }
@@ -1352,7 +1418,7 @@ span{
         gap: 10px;
     }
     .navigation {
-        flex-direction: column;
+        flex-direction: row;
     }
     .main-service {
         grid-template-columns: 1fr;
@@ -1374,15 +1440,35 @@ span{
 }
 
 @media (max-width: 576px) {
+
     #home .home-container {
         flex-direction: column;
         align-items: center;
     }
+
     #home .left-content {
-        width: 80%;
+        width: 100%;
         text-align: center;
         margin: 20px 0;
     }
+    
+    #home .left-content h1{
+       
+        text-align: center;
+        margin: 20px 0;
+        font-size: 32px;
+        
+    }
+
+    
+    #home .left-content p{
+       
+        text-align: left;
+        margin: 50px 15px;
+        font-size: 11px;
+     
+    }
+
     #home .home-container .right-content img {
         width: 90%;
         margin: 0;
@@ -1400,28 +1486,35 @@ span{
         margin-top: 20px;
     }
     .main-service {
-        width: 90%;
+        width: 50%;
     }
     #history .content-history {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        margin: 0 20px;
+        margin: 50px 20px;
+
     }
     .content-history img {
-        width: 100%;
-        margin: 0 0 20px 0;
+        width: 80%;
+        margin: 0 0 60px 0;
     }
     .content-history .cont-hist {
-        width: 100%;
+        width: 80%;
         padding: 20px;
+        margin-top: 30px;
     }
+
+
+
     .doct {
         flex-direction: column;
         align-items: center;
-        width: 100%;
-        margin: 0;
-        gap: 20px;
+        
+        width: 60%;
+        margin-left: 100px;
+        gap: 30px;
+
     }
     .item-doct {
         width: 80%;
@@ -1437,6 +1530,7 @@ span{
     .doct button {
         margin: 10px 0;
     }
+
 }
 
 
@@ -1445,10 +1539,99 @@ span{
 
 @media (max-width: 1200px) {
     .consult-content {
-        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
+
+    
     .form-row {
-        grid-template-columns: 1fr;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        column-gap: 20px;    
+    }
+
+    .form-group {
+        
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        
+    } 
+
+    .form-group .tel-prefix {
+        
+        position: absolute;
+        width: 45px;
+        border-right: none;
+        margin-top: 20px;
+    }
+
+    .form-group #phone::placeholder {
+
+    padding-left: 50px;
+    } 
+    .form-group #phone {
+
+    width: 200px;
+    margin-bottom: 40px;
+    }
+
+
+    .form-group input,
+    .form-group select {
+        width: 200px;
+        height: 35px;
+        border-radius: 8px;
+        border: 1px solid var(--silver);
+        margin-bottom: 10px;
+        
+    }
+
+    .form-group label {
+        font-size: 13px;
+    } 
+
+    
+    .policy {
+        display: inline;
+        margin-bottom: 15px;
+    } 
+
+    #policy {
+        width: 15px;
+        margin-top: 25px;
+        
+    }
+
+    .policy label {
+        font-size: 12px;
+        margin-bottom: 35px;
+        position: relative;
+        bottom: 14px;
+    }
+
+    .btn-submit {
+        height: 35px;
+        border-radius: 9px;
+        border: 1px solid var(--silver);
+        color: var(--white);
+        background-color: var(--primary);
+    }
+
+    .btn-submit:hover {
+        background-color: var(--lightprimary);
+    }
+
+
+
+     .btn-submit {
+       margin-right: 5px;
+       
+       width: 45%;
     }
 }
 
@@ -1480,49 +1663,149 @@ span{
 }
 
 @media (max-width: 576px) {
+    
+ 
     #consult-app .consult-content img {
+    display: none;
         width: 90%;
         height: auto;
     }
+
     .form-container {
         width: 90%;
-        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-    .subs h2 {
-        font-size: 20px;
+
+    .form-container .form-group .msg {
+
+        margin-left: 60px;
     }
-    .subs form input,
-    .subs form button {
-        width: 100%;
-        margin: 5px 0;
+ 
+    
+    .form-container .policy {
+       margin-left: 55px;
+      
+       /* margin: auto; */
     }
-}   
+
+    
+   form .form-group textarea{
+      
+        width: 62%;
+        position: relative;
+        left: 60px;
+        margin-bottom: 0px;
+        
+    };
+    
+
+    form input,
+    form button {
+       display: flex;
+       flex-direction: column;
+       width: 100%;
+       margin: 5px 0;
+       padding: 5px 5px;
+       
+   }
+    
+     .btn-submit {
+       margin-right: 5px;
+       
+       width: 45%;
+    }
+
+      
+    /************subvribe***************/
+
+    #subscribe {
+        margin: 0;
+        text-align: center;
+        background-color: var(--whiteBG);
+        padding: 50px;
+    }
+
+    
+.subs {
+    width: 80%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgb(39, 93, 134);
+    align-items: center;
+    height: 300px;
+    margin-top: 0px;
+    border-radius: 15px;
+    border: 1px solid var(--white);
+    color: var(--white);
+
+}
+
+#subscribe .subs form{
+
+    /* margin: auto; */
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    gap:20px;
+    padding: 20px;
+   
+}
+
+    
+#subscribe .subs h2 {
+        
+         /* display: inline; */
+         font-size: 16px;  
+         width: 100%;
+         margin :auto;
+         padding: 0px 10px;
+     }
+
+    
+.subs form input::placeholder {
+    font-size: 10px;
+    color: white;
+    padding: 10px;
+}
 
 
+    #subscribe .subs .btn-sub{
 
+        align-items: center;
+        padding: 10px;
+    }
+    
+
+
+}
 
 
 /************* Formulaire Authentificate ***********************/
 
 
 @media (max-width: 1200px) {
-    .container-form {
+   
+   #form-singnup .container-form {
         flex-direction: column;
         align-items: center;
         margin-bottom: 0px;
-        
+
     }
 
     .signup-form {
         width: 65%;
         margin-left: 100px;
-        margin-bottom: 0px;
+        /* margin-bottom: 80px; */
+        
         
     }
 
-    .signup-title{
-        margin-top: 230px;
+    #form-singnup .container-form .signup-title{
+        /* margin-top: 300px; */
         margin-right: 150px;
+        margin-bottom:0px;
         
     }
 }
@@ -1535,6 +1818,7 @@ span{
         text-align: center;
         margin-left: 50px;
     } */
+
     .container-form {
         flex-direction: column;
         align-items: center;
@@ -1563,30 +1847,58 @@ span{
 
 
 
-
-
-@media (max-width: 600px)  {
+@media (max-width: 500px)  {
       /* .menu {
         display: block;
         text-align: center;
         margin-left: 50px;
     } */
+
     .menu {
         display: none;
     }
 
     .container-form {
         width: 95%;
+        height: 80px;
+      
     }
 
     .signup-title h1 {
        
         text-align: center;
+       
+        position: relative;
+        left: 70px;
+        bottom: 300px;
+
     }
 
     .signup-form {
         width: 100%;
+        position: relative;
+        bottom: 440px;
+
     }
+
+    
+    .signun-title h1 {
+       
+        text-align: center;
+       
+        position: relative;
+        left: 70px;
+        bottom: 200px;
+
+    }
+
+    .signin-form {
+        width: 100%;
+        position: relative;
+        bottom: 280px;
+        left: 70px;
+    }
+
 
     .signup-form label {
         margin-top: 15px;
@@ -1597,7 +1909,7 @@ span{
     }
 
 
-        .signup-form label {
+    .signup-form label {
             margin-top: 15px;
         }
 
@@ -1605,40 +1917,39 @@ span{
             width: 100%;
         }
 
-}
-
-@media (max-width: 500px)  {
-.logo img {
-    width: 40px;
-}
-
-.container-form {
-    width: 95%;
-    
-}
-.signup-title{
-  
-    margin-bottom: 0px;
-}
-.signup-title h1 {
- 
-    text-align: center;
-   
-}
+            
+    .signup-form button {
+        padding: 10px;
+        width: 75%;
+        
+    }
 
 
-.signup-form label {
-    margin-top: 10px;
-}
+    .subs form input,
+    .subs form button {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 5px 0;
+        
+    }
 
-.signup-form input {
-    padding: 8px;
-    margin-bottom: 8px;
-}
+    .signup-form .create-account{
+        margin-bottom: 130px;
+    }
 
-.signup-form button {
-    padding: 10px;
-    width: 75%;
+.subs {
+    width: 80%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgb(39, 93, 134);
+    align-items: center;
+
+    height: 300px;
+    margin-top: 0px;
+    border-radius: 15px;
+    border: 1px solid var(--white);
+    color: var(--white);
 }
 
 
@@ -1646,4 +1957,133 @@ span{
 
 
 /**************************Footer*************************/
+
+
+/* Responsive Styles */
+
+/* For screens up to 1200px */
+@media screen and (max-width: 1200px) {
+    .subs {
+        width: 75%;
+        margin-left: 12.5%;
+    }
+    
+    .subs h2 {
+        font-size: 24px;
+    }
+    
+   
+    .news-item-1, .news-item-2, .news-item-3 {
+        padding: 19px;
+        flex: 1 1 45%; /* Adjust flex-basis to 45% */
+    }
+
+    .news .news-item-2 h2 {
+        font-size: 19.8px;
+    }
+
+    .news .news-item-2 p,
+    .news .news-item-3 p {
+        font-size: 9.8px;
+    }
+
+    .news .more-news p {
+        font-size: 11px;
+    }
+}
+
+
+
+
+/* Responsive styles for screen widths between 576px and 769px */
+@media (max-width: 769px) and (min-width: 480px) {
+    #footer .news {
+        flex-direction: column; /* Change to column layout */
+        align-items: center; /* Center align items */
+        height: 90%;
+        padding: 30px
+    }
+    
+    .news-item-1,
+    .news-item-2,
+    .news-item-3 {
+        width: 100%; 
+        padding: 40px 0px 60px 0px;
+    }
+    
+    .news-item-1::after,
+    .news-item-2::after,
+    .news-item-3::after {
+        display: none; /* Hide dividers */
+    
+    }
+    
+    .news-item-1,
+    .news-item-2,
+    .news-item-3 {
+        border-right: none; 
+        border-bottom: 1px solid var(--whiteBG);
+        width: 80%;
+        margin: auto;
+    }
+    
+    .news-item-1 img {
+        margin: 0 auto 20px; /* Center the image */
+    }
+    
+    .news .news-item-1 p,
+    .news .news-item-2 p,
+    .news .news-item-3 p,.news-item-2 h2 {
+        text-align: center;
+        /* font-size: 12px; */
+        margin-top: 5px;
+        
+
+    }
+
+
+    .news .news-item-1 p{
+        font-size: 12px;
+        margin-left: 30px;
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+    
+    .news .news-item-3 .link {
+       display: flex;
+       align-items: center;
+       flex-direction: column;
+       justify-content: center;
+       position: relative;
+       top:20px;
+
+    }
+    
+    .news .news-item-3 .link a {
+        text-align: center; 
+        margin-bottom: 10px; 
+    }
+    
+    .news .more-news {
+        text-align: center; 
+        padding: 10px 0; 
+        margin-bottom: 40px;
+    }
+    
+    
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:  #216583;
+    color: var(--white);
+    padding: 1px;
+    width: 100%;
+   position: relative;
+   bottom: 50px;
+}
+
+
+}
+
 

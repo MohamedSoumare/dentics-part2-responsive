@@ -33,7 +33,8 @@
 
    <main>
 
-           <section id="form-singnup">
+           
+        <section id="form-singnup">
               
                 <div class="container-form">
                     
@@ -41,25 +42,27 @@
                         <h1>Sign <span>In</span></h1>
                     </div>
     
-                    <form class="signup-form">
-                     
+                    <form class="signin-form" id="signin-form">
                         <label for="email">E-mail</label>
                         <input type="email" id="email" name="email" required>
+                        <div id="email-error" style="color: red;"></div>
                         
                         <label for="password">Password</label>
                         <input type="password" id="password" name="password" required>
+                        <div id="password-error" style="color: red;"></div>
                         
                         <button type="submit">I Confirm</button>
+                        
                         <div class="create-account">
-                            <p>We have  account</p>
+                            <p>We have an account</p>
                             <button class="sign-btn"><a href="sign-up.html">Sign Up</a></button>
                         </div>
-
                     </form>
                     
             </div>
         </section>
-        </main>
+        
+    </main>
         
     
 </section>
