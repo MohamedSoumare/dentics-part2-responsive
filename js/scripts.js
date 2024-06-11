@@ -18,134 +18,109 @@ const menuToggle = document.getElementById('menu-toggle');
 /**********************Validation de Sign up *********************/
  
 
-// Validation du formulaire
- document.getElementById('signup-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    let valid = true;
+document.addEventListener("DOMContentLoaded", function() {
+    const signupForm = document.getElementById("signup-form");
 
-    // Validation du nom complet
-    const fullName = document.getElementById('full-name').value;
-    const fullNameError = document.getElementById('full-name-error');
-    const fullNamePattern = /^[A-Za-z\s]+$/;
-    if (!fullNamePattern.test(fullName)) {
-        fullNameError.textContent = 'Le nom complet ne doit contenir que des lettres.';
-        valid = false;
-    } else {
-        fullNameError.textContent = '';
+    signupForm.addEventListener("submit", function(event) {
+        let isValid = true;
+
+        // Clear previous errors
+        document.getElementById("full-name-error").innerText = "";
+        document.getElementById("email-error").innerText = "";
+        document.getElementById("phone-error").innerText = "";
+        document.getElementById("password-error").innerText = "";
+
+        // Validate full name
+        const fullNameInput = document.getElementById("full-name");
+        const fullNameValue = fullNameInput.value.trim();
+        if (!validateFullName(fullNameValue)) {
+            document.getElementById("full-name-error").innerText = "Full name should contain only alphabetic characters.";
+            isValid = false;
+        }
+
+        // Validate email
+        const emailInput = document.getElementById("email");
+        const emailValue = emailInput.value.trim();
+        if (!validateEmail(emailValue)) {
+            document.getElementById("email-error").innerText = "Please enter a valid email address.";
+            isValid = false;
+        }
+
+        // Validate phone number
+        const phoneInput = document.getElementById("phone");
+        const phoneValue = phoneInput.value.trim();
+        if (!validatePhone(phoneValue)) {
+            document.getElementById("phone-error").innerText = "Please enter a valid phone number.";
+            isValid = false;
+        }
+
+        // Validate password
+        const passwordInput = document.getElementById("password");
+        const passwordValue = passwordInput.value.trim();
+        if (passwordValue.length < 6) {
+            document.getElementById("password-error").innerText = "Password must be at least 6 characters long.";
+            isValid = false;
+        }
+
+        // If not valid, prevent form submission
+        if (!isValid) {
+            event.preventDefault();
+        }
+    });
+
+    function validateFullName(name) {
+        const re = /^[A-Za-z\s]+$/;
+        return re.test(name);
     }
 
-    // Validation de l'e-mail
-    const email = document.getElementById('email').value;
-    const emailError = document.getElementById('email-error');
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailPattern.test(email)) {
-        emailError.textContent = 'Veuillez entrer un e-mail valide.';
-        valid = false;
-    } else {
-        emailError.textContent = '';
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
     }
 
-    // Validation du téléphone
-    const countryCode = document.getElementById('country-code').value;
-    const phone = document.getElementById('phone').value;
-    const phoneError = document.getElementById('phone-error');
-    let phonePattern;
-
-    switch (countryCode) {
-        case '+1': // USA
-            phonePattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-            break;
-        case '+33': // France
-            phonePattern = /^\d{9}$/;
-            break;
-        case '+49': // Germany
-            phonePattern = /^\d{10,11}$/;
-            break;
-        case '+91': // India
-            phonePattern = /^\d{10}$/;
-            break;
-        case '+34': // Spain
-            phonePattern = /^\d{9}$/;
-            break;
-        case '+212': // Morocco
-            phonePattern = /^\d{9}$/;
-            break;
-        case '+222': // Mauritania
-            phonePattern = /^\d{8}$/;
-            break;
-        case '+223': // Mali
-            phonePattern = /^\d{8}$/;
-            break;
-        case '+221': // Senegal
-            phonePattern = /^\d{9}$/;
-            break;
-        default:
-            phonePattern = /^\d+$/;
-            break;
-    }
-
-    if (!phonePattern.test(phone)) {
-        phoneError.textContent = `Veuillez entrer un numéro de téléphone valide pour l'indicatif ${countryCode}.`;
-        valid = false;
-    } else {
-        phoneError.textContent = '';
-    }
-
-    // Validation du mot de passe
-    const password = document.getElementById('password').value;
-    const passwordError = document.getElementById('password-error');
-    const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-    if (!passwordPattern.test(password)) {
-        passwordError.textContent = 'Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule et un chiffre.';
-        valid = false;
-    } else {
-        passwordError.textContent = '';
-    }
-
-    // Soumettre le formulaire si toutes les validations sont correctes
-    if (valid) {
-        this.submit();
+    function validatePhone(phone) {
+        const re = /^\(\d{3}\)\s\d{3}-\d{4}$/;
+        return re.test(phone);
     }
 });
 
 
 
 /*******************Signin *****************************/
+document.addEventListener("DOMContentLoaded", function() {
+    const signinForm = document.getElementById("signin-form");
 
- //Validation du formulaire
- document.getElementById('signin-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+    signinForm.addEventListener("submit", function(event) {
+        let isValid = true;
 
-    let valid = true;
+        // Clear previous errors
+        document.getElementById("email-error").innerText = "";
+        document.getElementById("password-error").innerText = "";
 
-   // Validation de l'e-mail
-    const email = document.getElementById('email').value;
-    const emailError = document.getElementById('email-error');
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        // Validate email
+        const emailInput = document.getElementById("email");
+        const emailValue = emailInput.value.trim();
+        if (!validateEmail(emailValue)) {
+            document.getElementById("email-error").innerText = "Please enter a valid email address.";
+            isValid = false;
+        }
 
-    if (!emailPattern.test(email)) {
-        emailError.textContent = 'Veuillez entrer un e-mail valide.';
-        valid = false;
-    } else {
-        emailError.textContent = '';
-    }
+        // Validate password
+        const passwordInput = document.getElementById("password");
+        const passwordValue = passwordInput.value.trim();
+        if (passwordValue.length < 6) {
+            document.getElementById("password-error").innerText = "Password must be at least 6 characters long.";
+            isValid = false;
+        }
 
-//    Validation du mot de passe
+        // If not valid, prevent form submission
+        if (!isValid) {
+            event.preventDefault();
+        }
+    });
 
-    const password = document.getElementById('password').value;
-    const passwordError = document.getElementById('password-error');
-    const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-
-    if (!passwordPattern.test(password)) {
-        passwordError.textContent = 'Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule et un chiffre.';
-        valid = false;
-    } else {
-        passwordError.textContent = '';
-    }
-
-   // Soumettre le formulaire si toutes les validations sont correctes
-    if (valid) {
-        this.submit();
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
     }
 });
