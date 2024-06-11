@@ -1503,6 +1503,7 @@ span{
         width: 80%;
         padding: 20px;
         margin-top: 30px;
+        margin-bottom: 60px;
     }
 
 
@@ -1996,12 +1997,15 @@ span{
 
 
 /* Responsive styles for screen widths between 576px and 769px */
-@media (max-width: 769px) and (min-width: 480px) {
+@media (max-width: 769px) and (min-width: 400px) {
     #footer .news {
         flex-direction: column; /* Change to column layout */
         align-items: center; /* Center align items */
-        height: 90%;
-        padding: 30px
+        /* height: 100%; */
+        padding: 30px;
+        margin-top: 30px;
+        margin-bottom: 0;
+        
     }
     
     .news-item-1,
@@ -2080,7 +2084,7 @@ span{
     padding: 1px;
     width: 100%;
    position: relative;
-   bottom: 50px;
+   bottom: 0px;
 }
 
 
