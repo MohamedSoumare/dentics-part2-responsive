@@ -569,8 +569,9 @@ span{
 
 /* formulaire de contact dentics*/
 
+
 #consult-app{
-    margin: 90px 0px 80px 0px;
+    margin: 95px 0px 20px 0px;
 }
 
 
@@ -586,6 +587,7 @@ span{
     height: 480px;
     border-radius: 20px;
     margin-right: 80px;
+
 }
 
 
@@ -593,8 +595,9 @@ span{
     
     display: flex;
     flex-direction: column;
-    /* margin-left: 50px; */
-    margin-top: 30px;
+    margin-left: 50px;
+    margin-top: 20px;
+    align-items: center;
     
 } 
 
@@ -603,7 +606,7 @@ span{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    column-gap: 20px;    
+    column-gap: 40px;    
 }
 
 .form-group {
@@ -617,7 +620,7 @@ span{
 .form-group .tel-prefix {
     
     position: absolute;
-    width: 45px;
+    width: 75px;
     border-right: none;
     margin-top: 20px;
     
@@ -625,23 +628,27 @@ span{
 
 .form-group #phone::placeholder {
     
-    padding-left: 50px;
+    padding-left: 8px;
+    
 } 
 .form-group #phone {
     
     width: 200px;
     margin-bottom: 40px;
+    padding-left: 70px;
 }
 
 
 .form-group input,
 .form-group select {
-    width: 200px;
-    height: 35px;
-    border-radius: 8px;
-    border: 1px solid var(--whiteBG);
-    margin-bottom: 10px;
     
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: solid var(--silver) 1px;
+    background-color: transparent;
+    color: var(--muted);
 }
 
 .form-group label {
@@ -649,37 +656,47 @@ span{
 } 
 
 .form-group textarea {
-    width: 420px;
+
+    width: 430px;
     height: 100px;
     border-radius: 8px;
     border: 1px solid var(--silver);
     margin-top: 10px;
+    resize: none;
+
 }
 
 .policy {
-    display: inline;
-    margin-bottom: 15px;
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    width: 100%;
+
 } 
 
 #policy {
     width: 15px;
-    margin-top: 25px;
+    margin-top: 5px;
     
 }
 
 .policy label {
     font-size: 12px;
-    margin-bottom: 35px;
+    /* margin-bottom: 30px; */
     position: relative;
-    bottom: 14px;
+    bottom: 3px;
+    margin-bottom: 20px;
 }
 
 .btn-submit {
-    height: 35px;
+
+    height: 45px;
     border-radius: 9px;
     border: 1px solid var(--silver);
     color: var(--white);
     background-color: var(--primary);
+    width: 100%;
+   
 }
 
 .btn-submit:hover {
@@ -687,9 +704,7 @@ span{
 }
 
 
-
-
-
+ 
 /** Form d'authentificate */
 
 
@@ -700,33 +715,37 @@ span{
     /* height: calc(100vh - 20px); */
     background-color: var(--white);
     width: 100%;
+    margin: 0px 50px;
    
 }
 
 
 .container-form{
+    
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+    align-items: center;
     margin-top: 130px;
-    gap: 130px;
+    width: 80%;
+    /* gap: 130px; */
    
 }
 
 .signup-title h1 {
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: 600;
     position: relative;
     bottom: 90px;
-    right: 60px;
+    /* right: 30px; */
 }
 
 .signin-title h1{
 
     align-items: center;
     font-size: 48px;
-    margin-bottom: 100px;
+    margin-bottom: 70px;
+    /* margin-left: 200px; */
 
 }
 
@@ -753,19 +772,20 @@ span{
 }
 
 
-
-
 .signup-form label {
 
     margin-top: 4px;
     margin-bottom: 8px;
     font-weight: 500;
+    margin-left: 80px;
 }
 
 .signin-form label{
     
     margin-top: 4px;
     margin-bottom: 8px;
+    /* margin-right: 550px; */
+    margin-left: 40px;
      font-weight: 500;
 }
 
@@ -774,6 +794,7 @@ span{
     border: 1px solid #ccc;
     border-radius: 10px;
     margin-bottom: 10px;
+    margin-left: 80px;
     width: 350px;
 }
 
@@ -782,13 +803,14 @@ span{
     border: 1px solid #ccc;
     border-radius: 10px;
     margin-bottom: 14px;
+    margin-left: 40px;
     width: 350px;
 }
 
 
 .phone-input {
     display: flex;
-    gap: 2px;
+    gap: 1px;
    
 }
 
@@ -797,12 +819,14 @@ span{
     border: 1px solid #ccc;
     border-radius: 10px;
     margin-bottom: 10px;
-   
-    width: 15%;
+    margin-left: 80px;
+    width: 16%;
 }
 
 .phone-input input {
     width: 270px;
+    margin-left: 0px;
+    
 }
 
 
@@ -816,6 +840,7 @@ span{
     cursor: pointer;
     width: 350px;
     margin-bottom: 0px;
+    margin-left: 80px;
 }
 
 .signin-form button{
@@ -828,6 +853,7 @@ span{
     cursor: pointer;
     width: 350px;
     margin-bottom: 0px;
+    margin-left: 40px;
     /* width: 100%; */
 
 }
@@ -845,15 +871,35 @@ span{
     align-items: center;
     margin-top: 40px;
     gap: 50px;
+
 }
 
-.create-account p {
-    margin-right: 5px;
+
+
+
+.create-account p{
+   
     margin-top: 35px;
     font-size: 12px;
-    
+    font-weight: 500;
+    /* width: 350px; */
+    margin-left: 40px;
     width: 100%;
+   
 }
+
+
+
+.signup-form .create-account p{
+   
+    margin-top: 35px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 80px;
+    width: 100%;
+   
+}
+
 
 .create-account .sign-btn {
   
@@ -862,11 +908,27 @@ span{
     border-radius: 5px;
     border: none;
     cursor: pointer;
-    
-    margin-right: 140px;
-    /* width: 100%; */
+    width: 70%;
+    margin-right:220px;
+ 
     
 }
+
+
+.signup-form .create-account .sign-btn {
+  
+    background-color: var(--primary);
+    padding: 10px 0px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 70%;
+    margin-right:170px;
+
+
+    
+}
+
 
 .create-account a{
     color: var(--white);
@@ -1232,6 +1294,7 @@ span{
     }
 
     #home .home-container .right-content img {
+      
         width: 300px;
         height: 200px;
     }
@@ -1247,8 +1310,9 @@ span{
     }
 
     #home .home-container .right-content img {
-        width: 250px;
-        height: 150px;
+        width: 380px;
+        height: 180px;
+       
     }
     
     .nav-login-btn {
@@ -1551,6 +1615,7 @@ span{
 
 
 @media (max-width: 1200px) {
+   
     .consult-content {
         display: flex;
         justify-content: center;
@@ -1585,21 +1650,24 @@ span{
 
     .form-group #phone::placeholder {
 
-    padding-left: 50px;
+        padding-right: 300px;
+      
     } 
+
     .form-group #phone {
 
-    width: 200px;
-    margin-bottom: 40px;
+        width: 100%;
+        margin-bottom: 40px;
     }
 
 
     .form-group input,
     .form-group select {
-        width: 200px;
+        
+        width: 100%;
         height: 35px;
         border-radius: 8px;
-        border: 1px solid var(--white);
+        border: 1px solid var(--silver);
         margin-bottom: 10px;
         
     }
@@ -1675,62 +1743,119 @@ span{
     }
 }
 
-@media (max-width: 576px) {
+
+
+/*********************************************************************************/
+
+@media (max-width: 500px) {
     
- 
+
     #consult-app .consult-content img {
-    display: none;
+     
+        display: none;
         width: 90%;
         height: auto;
     }
 
     .form-container {
-        width: 90%;
+        
+        width: 100%;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+        
+        margin: auto;
+    
+    }
+
+    
+    .form-group {
+        
+        margin-top: 0px;
+        margin-bottom: 5px;
     }
 
     .form-container .form-group .msg {
-
-        margin-left: 60px;
+        margin-left: 40px;
     }
  
-    
-    .form-container .policy {
-       margin-left: 55px;
+   form .form-group textarea {
       
-       /* margin: auto; */
+        width: 75%;
+        position: relative;
+        left: 40px;
+        bottom: 5px;
+
+    };
+
+    .form-row {
+    
+        margin: 0px;
+        padding: 0px;
+    }
+        
+
+    .form-group #phone::placeholder {
+
+       padding-right: 300px;
+     
+    } 
+
+    .form-group .tel-prefix {
+        /* width: 100%; */
+        position: absolute;
+        width: 64px;
+        border-right: none;
+        margin-left: 1px;
+        margin-top: 20px;
+        /* margin-bottom: 10px; */
+        
+    }
+
+        
+    .policy {
+        display: inline;
+        margin-bottom: 3px;
+        margin-left: 235px;
+        /* width: 100%; */
+    } 
+
+    #policy {
+        /* width: 100%; */
+        width: 15px;
+        margin-top: 10px;
+        
+    }
+
+    .policy label {
+        font-size: 12px;
+        /* margin-bottom: 35px; */
+        position: relative;
+        bottom: 40px;
+        left: 25px;
+        width: 100%;
     }
 
     
-   form .form-group textarea{
-      
-        width: 62%;
-        position: relative;
-        left: 60px;
-        margin-bottom: 0px;
-        
-    };
-    
-
     form input,
     form button {
        display: flex;
        flex-direction: column;
        width: 100%;
-       margin: 5px 0;
-       padding: 5px 5px;
+       /* margin: 5px; */
+       /* padding: 5px 5px; */
        
    }
     
-     .btn-submit {
-       margin-right: 5px;
-       
-       width: 45%;
+    .btn-submit {
+       padding: 10px 10px; 
+        width: 50%;
+        align-items: center;
+
     }
 
-      
+        
     /************subvribe***************/
 
     #subscribe {
@@ -1867,77 +1992,7 @@ span{
         margin-left: 50px;
     } */
 
-    .menu {
-        display: none;
-    }
-
-    .container-form {
-        width: 95%;
-        height: 80px;
-      
-    }
-
-    .signup-title h1 {
-       
-        text-align: center;
-       
-        position: relative;
-        left: 70px;
-        bottom: 300px;
-
-    }
-
-    .signup-form {
-        width: 100%;
-        position: relative;
-        bottom: 440px;
-
-    }
-
     
-    .signun-title h1 {
-       
-        text-align: center;
-       
-        position: relative;
-        left: 70px;
-        bottom: 200px;
-
-    }
-
-    .signin-form {
-        width: 100%;
-        position: relative;
-        bottom: 280px;
-        left: 70px;
-    }
-
-
-    .signup-form label {
-        margin-top: 15px;
-    }
-
-    .signup-form button {
-        width: 100%;
-    }
-
-
-    .signup-form label {
-            margin-top: 15px;
-        }
-
-        .signup-form button {
-            width: 100%;
-        }
-
-            
-    .signup-form button {
-        padding: 10px;
-        width: 75%;
-        
-    }
-
-
     .subs form input,
     .subs form button {
         display: flex;
@@ -1964,6 +2019,213 @@ span{
     border: 1px solid var(--white);
     color: var(--white);
 }
+
+
+    #form-singnup{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* height: calc(100vh - 20px); */
+        background-color: var(--white);
+        width: 100%;
+        margin: 80px -50px ;
+        height: 100%;
+        
+    }
+    
+    .menu {
+        display: none;
+    }
+
+    .container-form {
+        width: 95%;
+        height: 80px;
+      
+    }
+
+    .signup-title h1 {
+       
+        align-items: center;
+       
+        position: relative;
+        left: 120px;
+        bottom: 450px;
+
+    }
+
+    
+.signup-form input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-left: 80px;
+    width: 70%;
+}
+
+.signin-form input{
+
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-left: 60px;
+    width: 70%;
+
+}
+
+
+.signin-form label{
+    
+    margin-top: 4px;
+    margin-bottom: 8px;
+    /* margin-right: 550px; */
+    margin-left: 65px;
+     font-weight: 500;
+}
+
+
+.phone-input select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-left: 80px;
+    width: 16%;
+}
+
+.phone-input input {
+    width: 54%;
+    margin-left: 0px;
+    
+}
+
+
+    .signup-form {
+        width: 100%;
+        position: relative;
+        bottom: 440px;
+        margin: 0px 10px;
+        left: 30px;
+
+    }
+
+    
+    .signin-title h1 {
+       
+        
+        position: relative;
+        left: 62px;
+        bottom: 150px;
+
+    }
+
+    .signin-form {
+        width: 100%;
+        position: relative;
+        bottom: 280px;
+        left: 70px;
+    }
+
+    
+
+
+    .signup-form label {
+            margin-top: 15px;
+        }
+
+        .signup-form button {
+            width: 100%;
+        }
+
+      
+            
+    .signin-form button{
+        margin-top: 20px;
+        padding: 15px;
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 70%;
+        margin-bottom: 0px;
+        margin-left: 58px;
+        align-items: center;
+        /* width: 100%; */
+        
+    }
+
+
+    .signup-form button{
+        margin-top: 20px;
+        padding: 15px;
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 69%;
+        margin-bottom: 0px;
+        margin-left: 83px;
+        align-items: center;
+    }
+    
+
+
+    
+.create-account {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    gap: 50px;
+
+
+}
+
+
+
+
+.create-account p{
+   
+    margin-top: 35px;
+    font-size: 12px;
+    font-weight: 500;
+    /* width: 350px; */
+    margin-left: 70px;
+    width: 100%;
+   
+}
+
+
+.create-account .sign-btn {
+  
+    background-color: var(--primary);
+    padding: 10px 0px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+    margin-right:85px;
+ 
+    
+}
+
+
+
+
+.signup-form .create-account .sign-btn {
+  
+    background-color: var(--primary);
+    padding: 10px 0px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+    margin-right:40px;
+    
+}
+
 
 
 

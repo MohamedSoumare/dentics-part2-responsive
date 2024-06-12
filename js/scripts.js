@@ -16,8 +16,8 @@ const menuToggle = document.getElementById('menu-toggle');
 
 
 /**********************Validation de Sign up *********************/
- 
 
+ 
 document.addEventListener("DOMContentLoaded", function() {
     const signupForm = document.getElementById("signup-form");
 
@@ -47,18 +47,22 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         // Validate phone number
+        const countryCodeSelect = document.getElementById("country-code");
+        const selectedOption = countryCodeSelect.options[countryCodeSelect.selectedIndex];
         const phoneInput = document.getElementById("phone");
         const phoneValue = phoneInput.value.trim();
-        if (!validatePhone(phoneValue)) {
-            document.getElementById("phone-error").innerText = "Please enter a valid phone number.";
+        const phoneLength = parseInt(selectedOption.getAttribute("data-length"));
+
+        if (!validatePhone(phoneValue, phoneLength)) {
+            document.getElementById("phone-error").innerText = `Please enter a valid phone number with ${phoneLength} digits.`;
             isValid = false;
         }
 
         // Validate password
         const passwordInput = document.getElementById("password");
         const passwordValue = passwordInput.value.trim();
-        if (passwordValue.length < 6) {
-            document.getElementById("password-error").innerText = "Password must be at least 6 characters long.";
+        if (passwordValue.length < 8) {
+            document.getElementById("password-error").innerText = "Password must be at least 8 characters long.";
             isValid = false;
         }
 
@@ -78,15 +82,15 @@ document.addEventListener("DOMContentLoaded", function() {
         return re.test(email);
     }
 
-    function validatePhone(phone) {
-        const re = /^\(\d{3}\)\s\d{3}-\d{4}$/;
+    function validatePhone(phone, length) {
+        const re = new RegExp(`^\\d{${length}}$`);
         return re.test(phone);
     }
 });
 
 
-
 /*******************Signin *****************************/
+
 document.addEventListener("DOMContentLoaded", function() {
     const signinForm = document.getElementById("signin-form");
 
