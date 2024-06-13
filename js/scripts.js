@@ -1,18 +1,17 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuClose = document.getElementById('menu-close');
-    const menu = document.getElementById('menu');
+document.addEventListener('DOMContentLoaded', function() {
+    var menuToggle = document.getElementById('menu-toggle');
+    var menuClose = document.getElementById('menu-close');
+    var menu = document.getElementById('menu');
 
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', function() {
         menu.classList.add('show');
-        menuToggle.style.display = 'none';
-        menuClose.style.display = 'block';
+
     });
 
-    menuClose.addEventListener('click', () => {
+
+    menuClose.addEventListener('click', function() {
         menu.classList.remove('show');
-        menuToggle.style.display = 'block';
-        menuClose.style.display = 'none';
+
     });
 });
 
