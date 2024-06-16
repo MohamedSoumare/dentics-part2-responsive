@@ -48,19 +48,13 @@ body{
 }
 
 
-#navbar{
-
-    margin: auto;
-    
-}
-
 .navigation {
     display: flex;
     background-color: var(--white);
     justify-content: space-between;
     /* max-width: 1200px; */
     width: 100%;
-    margin: 0 auto;
+   margin: auto;
     z-index: 1000;
     padding: 10px 0px;
     box-shadow: 0px 2px rgba(0, 0, 0, 0.1);
@@ -71,13 +65,14 @@ body{
     right: 0; 
 }
 
-.menu{
+.menu ul{
 
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: auto;
-    margin-right: 80px;
+    
+    /* margin-right: 100px; */
+    margin-left: 350px;
     list-style: none;
        
 }
@@ -303,7 +298,7 @@ span{
     display: flex ;
     justify-content: center;
     align-items: center;
-    margin-left: 600px;
+    margin-left: 380px;
     margin-bottom: 0px;
     margin-top: 50px;
 
@@ -311,15 +306,16 @@ span{
 
 
 .service-list{
-    
-    margin: 20px 50px 100px 80px;
+    width: 100%;
+    margin: 40px 50px 100px 90px;
  
 }
 .img-service { 
     
-    margin-left:10px;
+    /* margin-right: 0px; */
+    margin-left:0px;
     margin-bottom:90px ;
-    width: 500px; 
+    width: 100%; 
     padding: 20px 30px 0 30px;
  } 
  
@@ -1175,7 +1171,7 @@ span{
 
 /*********** Menu de navbar des elements ***********/
  /* Styles pour le menu */
-
+/* 
  .menu-toggle,
 .menu-close {
     display: none;
@@ -1183,76 +1179,95 @@ span{
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-}
+} */
 
-/* Afficher le bouton de menu en mode mobile */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-    .menu {
-        display: none;
-        justify-content: center;
-        align-items: center;
+
+.toggle_menu {
+    display: none;
     
-        position: absolute;
-        top: 42px;
-        left: 375px;
-        
-        background-color: white;
-       
-        width: 50%;
-        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
-        padding: 10px;
-        border-radius: 5px;
-        flex-direction: column;
-    }
-    .menu.show {
-        display: flex;
-    }
-    .menu-close {
-        display: block;
-        align-self: flex-end;
-    }
-    .navigation .menu a {
-        font-size: 1.2rem;
-        padding: 10px;
-        
-        width: 100%;
-        margin-bottom: 10px;
-        margin-left: 15px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
+   
 }
-
-/* Ajustements pour différentes tailles d'écran */
-
-
-@media (max-width: 650px){
-    .navigation .menu {
-        top: 50px;
-        left: 275px;
-        padding: 25px;
-    }
-
-    
-    .navigation .menu a {
-        font-size: 1.2rem;
-        padding: 10px;
-        
-        width: 100%;
-        margin-bottom: 15px;
-        margin-left: 5px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
-}
-
 
 @media (max-width: 500px){
+
+ 
+
+    #header .menu{
+        display: none;
+    }
+    #header .navigation img{
+        width: 90px;
+        height: 28px;
+        display: flex;
+        margin: auto 30px;
+    }
+#header .toggle_menu {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    align-items: center;
+    
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+   
+
+}
+#header .toggle_menu::before {
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 25px;
+    background-color: var(--primary);
+    border-radius: 15px;
+    box-shadow: blue 0 8px 0;
+    transform: translateY(-10px);
+    transition: 0.5s;
+}
+#header .toggle_menu::after {
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 25px;
+    background-color: var(--primary);
+    border-radius: 15px;
+    transform: translateY(6px);
+    transition: 0.5s;
+}
+#header .toggle_menu.active::before{
+    transform: translateY(0) rotate(135deg);
+    box-shadow: 0 0 0 var(--primary);
+}
+#header .toggle_menu.active::after{
+    transform: translateY(0) rotate(-135deg);
+}
+#header .menu.responsive {
+    display: flex;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--whiteBG);
+    flex-direction: column;
+}
+
+
+.menu ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 120px;
+    margin-left: 0px;
+    list-style: none;
+    font-size: 32px;
+    font-weight: 500;
+}
+ 
+
+ 
     .navigation .menu {
         top: 50px;
         left: 235px;
@@ -1261,6 +1276,7 @@ span{
 
     
     .navigation .menu a {
+    
         font-size: 1rem;
         padding: 10px;
         
@@ -1270,6 +1286,7 @@ span{
         display: flex;
         align-items: center;
         flex-direction: column;
+    
     }
 
 
@@ -1282,11 +1299,11 @@ span{
         justify-content: center;
         margin-left: 0px;
         
-        
     }
     #home .left-content h1 {
-        margin-top: 40px;
-        font-size: 25px;
+        margin-top: 100px;
+        font-size: 36px;
+        width: 100%;
     }
     #home .left-content p {
         font-size: 11px;
@@ -1294,9 +1311,11 @@ span{
     }
     #home .home-container .right-content img {
         
-        width: 65%;
-        height: 80%;
-        margin-left: 110px;
+        width: 75%;
+        height: 75%;
+        margin-left: 80px;
+        margin-bottom: 30px;
+
 
     }
     .nav-login-btn {
@@ -1314,14 +1333,23 @@ span{
 
     /*****************************Services***************************/
 
+
+    #services{
+        margin-right: 70px;
+    }
     .services-content {
-        margin: auto;
-        padding: 10px;
+        margin-top:80px ;
+        padding:5px 10px;
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin-left: 0px;
+        width: 480px;
+
+       
+        
     }
     .right-service {
  
@@ -1329,15 +1357,17 @@ span{
         align-items: center; 
         margin-top: 40px;
         margin-right: 95px;
+        
     }
 
     .right-service .serv {
-        width: 75%;
-        height: 70%;
+        width: 80%;
+        height: 80%;
         margin-right: 20px;
         /* padding: 10px 70px; */
         
     }
+
     
      .services-content .left-service h1{
         margin: auto;
@@ -1365,22 +1395,28 @@ span{
       
         align-items: center ;
         /* margin:auto; */
-        margin-left: 40px;
-        margin-top: 20px;
+        margin-left: 115px;
+        margin-top: 180px;
         margin-bottom: 20px;
     } 
     
     .more-services h1 {
+
+        position: relative;
         font-size: 24px;
-        margin-top: 20px;
-        background-color: #0056b3;
+        top: 550px;
+        right: 350px;
+        width: 100%;
+
+        
+        
     }
     .service-item img {
         
         width: 8%;
         height: 8%;
         margin-top: 2px;
-        margin-left: 20px;
+        margin-left: 80px;
 
     }
   
@@ -1389,6 +1425,8 @@ span{
         width: 60%;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        margin-right: 35px;
     }
   
     .more-services h1 {
@@ -1396,8 +1434,40 @@ span{
           margin-top: 20px;
      }
 
-     
-    /************History****************/
+
+             
+.our-services {
+    text-align: center; 
+    padding: 10px 0;
+    
+}
+
+.our-services h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: black;
+    margin-left: 40px;
+    margin-bottom: 0px;
+}
+
+.our-services h1 span {
+    color: var(--yellow);
+}
+
+.our-services hr {
+    border: 0;
+    height: 1px;
+    background: var(--silver);
+    margin: 10px 0 30px 0px;
+    width: 620px;
+}
+
+
+
+
+
+
+/************History****************/
 
     #history .content-history {
         flex-direction: column;
@@ -1407,7 +1477,7 @@ span{
     }
     .content-history img {
         width: 80%;
-        margin: 0 0 60px 0;
+        margin: 0 0 60px 40px;
     }
     .content-history .cont-hist {
         width: 80%;
@@ -1415,6 +1485,7 @@ span{
         margin-top: 30px;
         margin-bottom: 60px;
         text-align: left;
+        margin-left: 40px;
     }
     .doct {
         flex-direction: column;
@@ -1437,6 +1508,9 @@ span{
     .doct button {
         margin: 10px 0;
     }
+
+
+    
 
 }
 
@@ -1732,153 +1806,106 @@ span{
     }
 }
 
-@media (max-width: 992px) {
-    #consult-app .consult-content img {
-        width: 300px;
-        height: 380px;
-    }
-}
-
-@media (max-width: 768px) {
-    #consult-app {
-        margin: 50px 0;
-    }
-    .subs {
-        width: 90%;
-    }
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-    .subs form {
-        flex-direction: column;
-        align-items: center;
-    }
-    .subs form input,
-    .subs form button {
-        width: 90%;
-    }
-}
-
-
-
 /*********************************************************************************/
-
 @media (max-width: 500px) {
-    
+
+    #consult-app {
+        margin: auto;
+        width: 100%;
+    }
 
     #consult-app .consult-content img {
-     
         display: none;
         width: 90%;
         height: auto;
     }
 
     .form-container {
-        
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        
-        margin: auto;
-    
     }
 
-    
     .form-group {
-        
         margin-top: 0px;
         margin-bottom: 5px;
+        width: 100%; 
     }
 
     .form-container .form-group .msg {
-        margin-left: 40px;
+        margin-left: 90px;
     }
- 
-   form .form-group textarea {
-      
-        width: 75%;
-        position: relative;
-        left: 40px;
-        bottom: 5px;
 
-    };
+    form .form-group textarea {
+        width: 55%; 
+        position: relative;
+        left: 22%;
+        bottom: 5px;
+    }
 
     .form-row {
-    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         margin: 0px;
         padding: 0px;
     }
-        
 
     .form-group #phone::placeholder {
-
-       padding-right: 300px;
-     
-    } 
+        padding-right: 300px;
+    }
 
     .form-group .tel-prefix {
-        /* width: 100%; */
         position: absolute;
         width: 64px;
         border-right: none;
         margin-left: 1px;
         margin-top: 20px;
-        /* margin-bottom: 10px; */
-        
     }
 
-        
     .policy {
         display: inline;
         margin-bottom: 3px;
-        margin-left: 235px;
-        /* width: 100%; */
-    } 
+        margin-left: 65px;
+    }
 
-    #policy {
-        /* width: 100%; */
-        width: 15px;
-        margin-top: 10px;
-        
+    .form-group #policy {
+        width: 4%;
+        margin-top: 0px;
+        margin-left: 60px;
     }
 
     .policy label {
         font-size: 12px;
-        /* margin-bottom: 35px; */
         position: relative;
-        bottom: 40px;
-        left: 25px;
+        bottom: 12px;
+        left: 5px;
         width: 100%;
     }
 
-    
     form input,
     form button {
-       display: flex;
-       flex-direction: column;
-       width: 100%;
-       /* margin: 5px; */
-       /* padding: 5px 5px; */
-       
-   }
-    
-    .btn-submit {
-       padding: 10px 10px; 
-        width: 50%;
-        align-items: center;
-
+        width: 100%; 
     }
 
+    .btn-submit {
+        margin-top: 30px;
+        padding: 10px 10px;
+        width: 60%;
+        align-items: center;
+    }
         
-    /************subvribe***************/
+    /**********************************************subvribe********************************************************/
 
     #subscribe {
-        margin: 0;
+       width: 100%;
         text-align: center;
         background-color: var(--whiteBG);
         padding: 50px;
+        /* margin-left: 50px; */
     }
 
     
@@ -1890,7 +1917,7 @@ span{
     align-items: center;
     height: 300px;
     margin-top: 0px;
-    border-radius: 15px;
+    border-radius:  15px;
     border: 1px solid var(--white);
     color: var(--white);
 
@@ -1902,6 +1929,7 @@ span{
     display: flex;
     align-items: center;
     margin-top: 20px;
+    flex-direction: column;
     gap:20px;
     padding: 20px;
    
@@ -1933,7 +1961,7 @@ span{
     
 
 
-}
+};
 
 
 /************* Formulaire Authentificate ***********************/
@@ -1966,96 +1994,41 @@ span{
 
 
 
-@media (max-width: 800px) {
-    /* .menu {
-        display: block;
-        text-align: center;
-        margin-left: 50px;
-    } */
 
-    .container-form {
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 0px;
-        
-    }
-
-    .signup-form {
-        width: 65%;
-        margin-left: 100px;
-        margin-bottom: 0px;
-        
-    }
-
-    .signup-form input {
-        padding: 8px;
-        margin-bottom: 8px;
-    }
-
-    .signup-title{
-        margin-top: 230px;
-        margin-right: -140px;
-        
-    }
-}
-
-
-
-@media (max-width: 500px)  {
-      /* .menu {
-        display: block;
-        text-align: center;
-        margin-left: 50px;
-    } */
-
+@media (max-width: 500px) and (min-width: 400px)  {
     
-    .subs form input,
-    .subs form button {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        margin: 5px 0;
-        
-    }
-
     .signup-form .create-account{
         margin-bottom: 120px;
     }
-
-.subs {
-    width: 80%;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    background-color: rgb(39, 93, 134);
-    align-items: center;
-
-    height: 300px;
-    margin-top: 0px;
-    border-radius: 15px;
-    border: 1px solid var(--white);
-    color: var(--white);
-}
-
+    
 
     #form-singnup{
         display: flex;
         justify-content: center;
         align-items: center;
+        
         /* height: calc(100vh - 20px); */
         background-color: var(--white);
         width: 100%;
-        margin: 80px -50px ;
-        height: 100%;
+        margin: 280px 0px 0px -50px  ;
+        height: auto;
         
     }
+
+    
     
     .menu {
         display: none;
     }
 
     .container-form {
-        width: 95%;
-        height: 80px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 70%;
+        /* height: 80px; */
       
     }
 
@@ -2064,8 +2037,8 @@ span{
         align-items: center;
        
         position: relative;
-        left: 120px;
-        bottom: 450px;
+        left: 50px;
+        bottom: 560px;
 
     }
 
@@ -2085,9 +2058,13 @@ span{
     border: 1px solid #ccc;
     border-radius: 10px;
     margin-bottom: 10px;
+
+
     margin-left: 60px;
     width: 70%;
 
+    position: relative;
+    bottom:60px;
 }
 
 
@@ -2098,6 +2075,9 @@ span{
     /* margin-right: 550px; */
     margin-left: 65px;
      font-weight: 500;
+     position: relative;
+     top: -55px;
+     
 }
 
 
@@ -2132,7 +2112,7 @@ span{
         
         position: relative;
         left: 62px;
-        bottom: 150px;
+        bottom: 270px;
 
     }
 
@@ -2157,7 +2137,7 @@ span{
       
             
     .signin-form button{
-        margin-top: 20px;
+        margin-top: 5px;
         padding: 15px;
         background-color: var(--primary);
         color: white;
@@ -2168,7 +2148,7 @@ span{
         margin-bottom: 0px;
         margin-left: 58px;
         align-items: center;
-        /* width: 100%; */
+       
         
     }
 
@@ -2194,8 +2174,8 @@ span{
     display: flex;
     align-items: center;
     margin-top: 40px;
-    gap: 50px;
-
+    gap: 20px;
+    width: 100%;
 
 }
 
@@ -2204,12 +2184,12 @@ span{
 
 .create-account p{
    
-    margin-top: 35px;
-    font-size: 12px;
+    margin-top: 20px;
+   
     font-weight: 500;
-    /* width: 350px; */
-    margin-left: 70px;
-    width: 100%;
+    
+    margin-left: 60px;
+    
    
 }
 
@@ -2258,47 +2238,17 @@ span{
 /**************************Footer*************************/
 
 
-/* Responsive Styles */
-
-/* For screens up to 1200px */
-@media screen and (max-width: 1200px) {
-    .subs {
-        width: 75%;
-        margin-left: 12.5%;
-    }
-    
-    .subs h2 {
-        font-size: 24px;
-    }
-    
-   
-    .news-item-1, .news-item-2, .news-item-3 {
-        padding: 19px;
-        flex: 1 1 45%; /* Adjust flex-basis to 45% */
-    }
-
-    .news .news-item-2 h2 {
-        font-size: 19.8px;
-    }
-
-    .news .news-item-2 p,
-    .news .news-item-3 p {
-        font-size: 9.8px;
-    }
-
-    .news .more-news p {
-        font-size: 11px;
-    }
-}
-
-
-
-
 /* Responsive styles for screen widths between 576px and 769px */
-@media (max-width: 769px) and (min-width: 400px) {
+@media (max-width: 500px) and (min-width: 400px) {
+
+    #footer{
+        /* margin-left: 60px; */
+        width: 500px;
+    }
+
     #footer .news {
-        flex-direction: column; /* Change to column layout */
-        align-items: center; /* Center align items */
+        flex-direction: column; 
+        align-items: center; 
         /* height: 100%; */
         padding: 30px;
         margin-top: 30px;
@@ -2374,15 +2324,17 @@ span{
     
     
   footer {
+
     display: flex;
     justify-content: center;
     align-items: center;
     background-color:  #216583;
     color: var(--white);
     padding: 1px;
-    width: 100%;
+     width: 500px;
    position: relative;
    bottom: 0px;
+   font-size: 12px;
 }
 
 

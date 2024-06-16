@@ -1,18 +1,28 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var menuToggle = document.getElementById('menu-toggle');
-    var menuClose = document.getElementById('menu-close');
-    var menu = document.getElementById('menu');
+// document.addEventListener('DOMContentLoaded', function() {
+//     var menuToggle = document.getElementById('menu-toggle');
+//     var menuClose = document.getElementById('menu-close');
+//     var menu = document.getElementById('menu');
 
-    menuToggle.addEventListener('click', function() {
-        menu.classList.add('show');
+//     menuToggle.addEventListener('click', function() {
+//         menu.classList.add('show');
 
-    });
+//     });
 
 
-    menuClose.addEventListener('click', function() {
-        menu.classList.remove('show');
+//     menuClose.addEventListener('click', function() {
+//         menu.classList.remove('show');
 
-    });
+//     });
+// });
+
+let toggle_menu = document.querySelector('.toggle_menu')
+let menu = document.querySelector('.menu')
+toggle_menu.onclick=function(){
+    toggle_menu.classList.toggle('active');
+    menu.classList.toggle('responsive');
+}
+document.getElementById("button").addEventListener("click", function() {
+    window.location.href = "login.html";
 });
 
 

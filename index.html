@@ -11,24 +11,31 @@
 </head>
 <body>
 
-    <header>
+    <header id="header">
         <!-- section barre de menu navbar -->
-        <section id="navbar">
+        
             <nav class="navigation">
                 <!-- images logo -->
                 <img class="picture" src="images/logo.png" alt="images logo">
-                <ul class="menu" id="menu">
+           
+                <div class="menu" id="menu">
+                <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#history">About us</a></li>
-                    <li><a href="#consult-content">Appointment</a></li>
+                    <li><a href="#consult-app">Appointment</a></li>
                     <li><a href="sign-up.html">Sign Up</a></li>
                     <li><a href="login.html" class="nav-login-btn">Login</a></li>
-                    <button class="menu-close" id="menu-close">✕</button>
+                    <!-- <button class="menu-close" id="menu-close">✕</button> -->
                 </ul>
-                <button class="menu-toggle" id="menu-toggle">☰</button>
+                <!-- <button class="menu-toggle" id="menu-toggle">☰</button> -->
+                </div>
+                <div class="toggle_menu">
+
+                </div>
+
             </nav>
-        </section>
+    
     </header>
     
      <!-- section acceuil home -->
@@ -265,21 +272,20 @@
             <h1>APPOINMENT</h1>
             <hr>
         </div>
-       <div class="consult-content">
-
+        <div class="consult-content">
             <img src="images/doctor-with-tablet-computer.jpg" alt="doctor-with-tablet">
             <form action="#" class="form-container">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required placeholder="Full name"/>
-                   </div>
-                   <div class="form-group">
+                    </div>
+                    <div class="form-group">
                         <label for="phone">Phone</label>
                         <select class="tel-prefix">
                             <option value="+01">+01</option>
-                            <input type="tel" name="phone" id="phone" placeholder="(555) 000-000"/>
                         </select>
+                        <input type="tel" name="phone" id="phone" placeholder="(555) 000-000"/>
                     </div>
                     <div class="form-group">
                         <label for="date">Date</label>
@@ -291,21 +297,20 @@
                             <option value="Dr. Pritis Barua">Dr. Pritis Barua</option>
                         </select>
                     </div>
-            </div>
-
-            <div class="form-group">
-                <label for="message" class="msg">Message</label>
-                <textarea name="message" id="message" cols="40" rows="5" placeholder="Include a message ..."></textarea>
-            </div>
-            <div class="form-group policy">
-                <input type="checkbox" id="policy" name="policy"/>
-                <label for="policy">You agree to our friendly privacy policy</label>
-            </div>
-            <button class="btn-submit"> I confirm </button>
-        </form>
-    </div>
-</section>
-
+                </div>
+        
+                <div class="form-group">
+                    <label for="message" class="msg">Message</label>
+                    <textarea name="message" id="message" cols="40" rows="5" placeholder="Include a message ..."></textarea>
+                </div>
+                <div class="form-group policy">
+                    <input type="checkbox" id="policy" name="policy"/>
+                    <label for="policy">You agree to our friendly privacy policy</label>
+                </div>
+                <button class="btn-submit">I confirm</button>
+            </form>
+        </div>
+    </section>        
      <section id="subscribe">
         <div class="subs">
             <h2> Subscribe to our newsletter</h2>
@@ -362,4 +367,5 @@
     
 </body>
 <script src="js/scripts.js"></script>
+
 </html>
