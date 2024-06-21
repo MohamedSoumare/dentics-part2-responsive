@@ -760,7 +760,7 @@ span{
     align-items: center;
     font-size: 48px;
     margin-bottom: 70px;
-    /* margin-left: 200px; */
+    margin-left: 45px;
 
 }
 
@@ -897,7 +897,7 @@ span{
     font-size: 12px;
     font-weight: 500;
     /* width: 350px; */
-    margin-left: 40px;
+    margin-left: 50px;
     width: 100%;
    
 }
@@ -1935,6 +1935,7 @@ footer .copy{
         background-color: var(--white);
         width: 100%;
         height: auto;
+        margin: 0px 50px 0px 12px;
         
     }
 
@@ -1979,20 +1980,23 @@ footer .copy{
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    margin-bottom: 10px;
+    
     width: 60%;
     position: relative;
     bottom:60px;
+    left: 42px;
+    
 }
 
 
 .signin-form label{
     
-    margin-top: 4px;
+   
     margin-bottom: 8px;
     font-weight: 500;
     position: relative;
     top: -55px;
+    left: 43px;
      
 }
 
@@ -2017,7 +2021,6 @@ footer .copy{
         width: 100%;
         position: relative;
         bottom: 260px;
-        margin: 0px 10px;
         display: flex;
         justify-content: center;
     }
@@ -2061,7 +2064,8 @@ footer .copy{
         margin-bottom: 0px;
      
         align-items: center;
-       
+       position: relative;
+       left: 40px;
         
     }
 
@@ -2098,12 +2102,13 @@ footer .copy{
    
     margin-top: 45px;
     font-weight: 500;
-    /* margin-left: 60px; */
+    margin-left: 70px;
 
 }
 .signup-form .create-account p{
     margin-top: 0px;
     font-weight: 500;
+    
 }
 
 .create-account .sign-btn {
