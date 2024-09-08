@@ -50,3 +50,6 @@ Nous apprécions toute contribution constructive pour rendre le site encore meil
 - HTML
 - CSS
 - JavaScript
+
+## Author
+- Mohamed Soumare
