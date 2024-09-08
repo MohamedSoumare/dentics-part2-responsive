@@ -10,13 +10,13 @@
     </head>
     
 <body>
+
     <header id="header">
         <!-- section barre de menu navbar -->
-        
             <nav class="navigation">
                 <!-- images logo -->
                 <img class="picture" src="images/logo.png" alt="images logo">
-           
+        
                 <div class="menu" id="menu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -24,7 +24,7 @@
                     <li><a href="#history">About us</a></li>
                     <li><a href="#consult-app">Appointment</a></li>
                     <li><a href="sign-up.html">Sign Up</a></li>
-                    <li><a href="login.html" class="nav-login-btn">Login</a></li>
+                    <li><a href="login.html" class="login-btn">Login</a></li>
                     <!-- <button class="menu-close" id="menu-close">✕</button> -->
                 </ul>
                 <!-- <button class="menu-toggle" id="menu-toggle">☰</button> -->
@@ -32,46 +32,40 @@
                 <div class="toggle_menu">
 
                 </div>
-
             </nav>
-    
     </header>
-    
 
     
     
-   <main>
-
-           
-        <section id="form-singnup">
-              
-                <div class="container-form">
-                    
-                   <div class="signin-title">
-                        <h1>Log<span>in</span></h1>
-                    </div>
-    
-                    <form class="signin-form" id="signin-form" action="#">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                        <div id="email-error" class="error"></div>
-    
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                        <div id="password-error" class="error"></div>
-    
-                        <button type="submit">login</button>
-    
-                        <div class="create-account">
-                            <p>Don't have account</p>
-                            <button class="sign-btn"><a href="sign-up.html">Sign Up</a></button>
-                        </div>
-                    </form>
+    <section id="form-singnup">
+          
+        <div class="container-form-signin">
+            
+           <div class="signup-title">
+                <h1>Log<span>in</span></h1>
             </div>
-        </section>
+
+            <form class="signup-form" id="signup-form" action="#">
+                
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <div id="email-error" class="error"></div>
+         
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <div id="password-error" class="error"></div>
         
-    </main>
-        
+                <button type="submit">Login</button>
+                
+                <div class="create-account">
+                    <p>We don't have account</p>
+                    <button class="sign-btn"><a href="login.html">Sign up</a></button>
+                </div>
+            </form>
+    </div>
+  </section>
+</main>
+     
     
 </section>
     
