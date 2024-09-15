@@ -1649,7 +1649,7 @@ footer .copy {
 
 
 
-@media only screen and (min-width: 400px) and (max-width: 659px){
+@media only screen and (min-width: 380px) and (max-width: 659px){
     
 
 
@@ -1767,6 +1767,8 @@ footer .copy {
         border-radius: 25px;
         margin-top: 50px;
         width: 90%;
+        height: 260px;
+        margin-right:40px;
 
     }
 
